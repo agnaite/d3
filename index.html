@@ -32,8 +32,12 @@
 
   <script type="text/javascript">
 
-    var dataset = [];                        //Initialize empty array
-    for (var i = 0; i < 25; i++) {           //Loop 25 times
+    function bars() {
+
+      d3.select('.container').selectAll("*").remove()
+
+      var dataset = [];                        //Initialize empty array
+      for (var i = 0; i < 25; i++) {           //Loop 25 times
         var newNumber = Math.random() * 30;  //New random number (0-30)
         dataset.push(newNumber);             //Add new number to array
       }
@@ -52,6 +56,13 @@
         var pastel = 'hsl(' + hue + ', 100%, 87.5%)';
         return pastel;
       });
+    }
+
+
+    setInterval(bars, 1000);
+
+    
+
 
   </script>
   </body>
